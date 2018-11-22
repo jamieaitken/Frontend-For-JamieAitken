@@ -1,0 +1,30 @@
+img.img-thumbnail{
+  max-width: 200px;
+}
+
+.socialFooterImg{
+    max-width: 50px;
+    height: auto;
+}
+
+#githubLogo{
+  max-width: 200px;
+}
+
+@media (min-width: 400px) {
+  .col-4{
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 700px) {
+  .col-4{
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .col-4{
+    max-width: 33.33%;
+  }
+}
