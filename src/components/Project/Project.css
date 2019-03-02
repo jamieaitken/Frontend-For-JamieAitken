@@ -34,7 +34,7 @@ article.project .language-badge
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    width: 5em;
+    width: 5.5em;
     padding: 5px;
     text-align: center;
     font-weight: 500; 
@@ -45,6 +45,12 @@ article.project .language-badge
     background-color: rgb(14, 175, 204)
 }
 
-.javascript{
+.javascript
+{
     background-color: rgb(124, 116, 6);
+}
+
+.typescript 
+{
+    background-color: blueviolet;
 }

@@ -28,14 +28,8 @@ export default class Project extends Component<Props, object>{
         } else {
             language = this.props.language!
         }
-                
-        let classNameLang = "language-badge"
-        
-        if(language === 'JavaScript'){
-            classNameLang += ' javascript';
-        }else if(language === 'PHP'){
-            classNameLang += ' php'
-        }
+
+        let classNameLang = "language-badge "+language.toLowerCase();
 
         return <p className={classNameLang}>{language}</p>
     }

@@ -14,9 +14,9 @@ export default class Experience extends Component<Props, object>{
                 <h3>Professional</h3>
                 <section id="active">
                     <p>January 2017 - Present</p>
-                    <p>BLACK<strong>BX</strong>s main objective is to increase our customers sales by offering easy-to-use Wi-Fi which in return, our customers capture their customers data and can market to them.</p>
+                    <p>BLACK<strong>BX</strong></p>
                     <ul>
-                        <li>Started breaking down our Monolith API into smaller services</li>
+                        <li>Started breaking down our Monolith API into smaller services. (Still a WIP 😅)</li>
                         <li>Responsible for the infrastructure of those services</li>
                         <li>3rd Party Integrations (Our Billing Platform and Stripe Connect)</li>
                     </ul>
