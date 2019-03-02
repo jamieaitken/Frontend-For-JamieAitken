@@ -1,0 +1,32 @@
+footer 
+{
+    background-color: cornflowerblue;
+    color: cornsilk;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+footer p {
+    font-size: small;
+}
+
+footer a {
+    margin-right: 20px;
+}
+
+footer svg path {
+    fill: cornsilk !important;
+    transition: 0.4s;
+}
+
+footer svg path:hover 
+{
+    fill: black !important;
+}
+
+@media (max-width: 750px)
+{
+    footer{
+        text-align: center;
+    }
+}

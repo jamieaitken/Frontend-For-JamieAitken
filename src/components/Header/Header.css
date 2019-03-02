@@ -1,0 +1,35 @@
+.profilePicture 
+{
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+nav h2 
+{
+    vertical-align: baseline;
+}
+
+nav a 
+{
+    text-decoration: none;
+    color: cornsilk;
+}
+
+@media (max-width: 750px)
+{
+    nav
+    {
+        text-align: center;
+    }
+    
+    nav h2 {
+        text-align: center;
+    }
+
+    .profilePicture{
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
