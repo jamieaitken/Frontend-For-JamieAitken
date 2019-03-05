@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import constants from '../../utilities/constants';
 import './Header.css';
 import alternateLogo from '../../assets/images/jamie_alt.png';
+import {NavLink} from 'react-router-dom';
 
 export interface Props {
 
@@ -41,13 +42,13 @@ export default class Header extends Component<Props, State>{
                 <nav>
                     <img src={this.state.profileImageHover ? alternateLogo : this.state.profileImage} className="profilePicture" onMouseEnter={this.onHover} onMouseLeave={this.onHoverLeave}/>
                     <h2>
-                        <a href="/">About</a>
+                        <NavLink to="/">About</NavLink>
                     </h2>
                     <h2>
-                        <a href="/experience">Experience</a>
+                        <NavLink to="/experience" exact>Experience</NavLink>
                     </h2>
                     <h2>
-                        <a href="/projects">Projects</a>
+                        <NavLink to="/projects" exact>Projects</NavLink>
                     </h2>
                 </nav>
             </header>

@@ -12,13 +12,11 @@ export interface Props {
 export default class Routes extends Component<Props, object>{
     render(){
         return (
-            <Router>
-                <Switch>
-                    <Route exact path="/" component={About}/>
-                    <Route path="/projects" component={ProjectList}/>
-                    <Route path="/experience" component={Experience}/>
-                </Switch>
-            </Router>
+            <Switch>
+                <Route exact path="/" component={About}/>
+                <Route path="/projects" component={ProjectList}/>
+                <Route path="/experience" component={Experience}/>
+            </Switch>
         )
     };
 }
