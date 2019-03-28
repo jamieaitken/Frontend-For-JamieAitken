@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom';
+import moment from 'moment'
 
 export interface Props {
 
 }
 
 export default class About extends Component<Props, object>{
+
+    calculateExperience = () =>{
+        return `${moment([2017,1,3]).fromNow(true)} experience.`
+    }
+
+
     render(){
         return (
             <section className="activeContent">
                 <h3>Hey Oh</h3>
-                <p>My name is Jamie and I&apos;m a Software Engineer working at a <a href="/experience#active">startup</a> based in Edinburgh, Scotland for just over two years now.</p>
+                <p>My name is Jamie and I&apos;m a Software Engineer with over {this.calculateExperience()} I&apos;m currently working at a <NavLink to="/experience#active" exact>startup</NavLink> based in Edinburgh, Scotland.</p>
                 <h3>When I&apos;m Not Working</h3>
                 <p>In my spare time, I </p>
                 <ul>
