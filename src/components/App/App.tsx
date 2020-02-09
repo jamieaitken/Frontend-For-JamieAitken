@@ -6,20 +6,17 @@ import Footer from '../Footer/Footer';
 import Routes from '../Routes/Routes';
 import './App.css';
 
+
 library.add(faLinkedin, faInstagram, faTwitter, faGithub, faChrome);
 
 class App extends Component {
   render() {
     return (
-      <div id="body">
-        <div id="informationContent">
-          <Header/>
-          <Footer/>
-        </div>
-        <div id="content">
-          <Routes/>
-        </div>
-      </div>
+      <>
+        <Header/>
+        <Routes/>
+        <Footer/>
+      </>
     );
   }
 }
