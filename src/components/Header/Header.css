@@ -1,35 +1,15 @@
-.profilePicture 
-{
-    max-width: 200px;
-    max-height: 200px;
-    border-radius: 50%;
-    border: 5px solid white;
+nav ul {
+    list-style: none;
+    width: 100%;
+    padding-left: 0;
 }
 
-nav h2 
-{
-    vertical-align: baseline;
+nav ul li {
+    display: inline-block;
 }
 
-nav a 
-{
-    text-decoration: none;
-    color: cornsilk;
-}
-
-@media (max-width: 750px)
-{
-    nav
-    {
-        text-align: center;
-    }
-    
-    nav h2 {
-        text-align: center;
-    }
-
-    .profilePicture{
-        margin-right: auto;
-        margin-left: auto;
-    }
+nav ul li:nth-of-type(2) {
+    width: calc(100% - 40px);
+    vertical-align: middle;
+    text-align: center;
 }

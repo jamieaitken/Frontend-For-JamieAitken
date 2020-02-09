@@ -1,9 +1,21 @@
 footer 
 {
-    background-color: cornflowerblue;
-    color: cornsilk;
+    background-color: whitesmoke;
+    color: black;
     padding-top: 20px;
     padding-bottom: 20px;
+    text-align: center;
+}
+
+a
+{
+    text-decoration: none;
+    transition: 0.6s;
+}
+
+a:hover
+{
+    color:black;
 }
 
 footer p {
@@ -15,18 +27,11 @@ footer a {
 }
 
 footer svg path {
-    fill: cornsilk !important;
+    fill: black !important;
     transition: 0.4s;
 }
 
 footer svg path:hover 
 {
-    fill: black !important;
-}
-
-@media (max-width: 750px)
-{
-    footer{
-        text-align: center;
-    }
+    fill: cornflowerblue !important;
 }

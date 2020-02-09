@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/jamieaitken/Frontend-For-JamieAitken.svg?style=svg&circle-token=9da6bf620137cd10b057d8ab9828968eb4005078)](https://circleci.com/gh/jamieaitken/Frontend-For-JamieAitken)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

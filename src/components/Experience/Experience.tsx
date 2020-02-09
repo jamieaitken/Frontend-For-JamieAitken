@@ -1,33 +1,27 @@
 import React, { Component } from 'react';
 import './Experience.css';
+import { Timeline } from 'antd';
 
 
-export interface Props {
-
-}
-
-export default class Experience extends Component<Props, object>{
-    render()
-    {
+export default class Experience extends Component{
+    render(){
         return (
-            <section className="activeContent">
-                <h3>Professional</h3>
-                <section id="active">
-                    <p>January 2017 - Present</p>
-                    <p>BLACK<strong>BX</strong></p>
-                    <ul>
-                        <li>Started breaking down our Monolith API into smaller services. (Still a WIP 😅)</li>
-                        <li>Responsible for the infrastructure of those services</li>
-                        <li>3rd Party Integrations (Our Billing Platform and Stripe Connect)</li>
-                    </ul>
-                </section>
-                <h3>Education</h3>
-                <section>
-                    <p>2013 - 2016</p>
-                    <p>Abertay University</p>
-                    <p>BSc (Hons) Computing (Second class, Divison 1)</p>
-                </section>
-            </section>
+            <>
+                <Timeline mode="alternate">
+                    <Timeline.Item>
+                        <h4>Abertay University</h4>
+                        <h5>September 2013 - June 2016</h5>
+                    </Timeline.Item>
+                    <Timeline.Item>
+                        <h4>BLACKBX</h4>
+                        <h5>January 2017 - July 2019</h5>
+                    </Timeline.Item>
+                    <Timeline.Item>
+                        <h4>iZettle</h4>
+                        <h5>July 2019 - Present</h5>
+                    </Timeline.Item>
+                </Timeline>
+            </>
         );
     }
 }
