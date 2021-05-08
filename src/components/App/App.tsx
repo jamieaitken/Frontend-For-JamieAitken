@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faLinkedin, faInstagram, faTwitter, faGithub, faChrome} from '@fortawesome/free-brands-svg-icons';
 import Header from '../Header/Header';
-import Routes from '../Routes/Routes';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,7 +14,6 @@ class App extends Component {
     return (
       <>
         <Header/>
-        <Routes/>
       </>
     );
   }
