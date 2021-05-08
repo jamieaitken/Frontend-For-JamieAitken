@@ -10,11 +10,6 @@ interface State {
 }
 
 export default class SocialLinks extends Component<Props, State> {
-    constructor(props: Props) {
-        super(props);
-    }
-
-
     render() {
         return (
             <>
