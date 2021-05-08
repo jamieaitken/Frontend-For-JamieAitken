@@ -54,6 +54,8 @@ workflows:
     jobs:
       - install-dependencies:
           filters:
+            branches:
+              ignore: /.*/
             tags:
               only: /^v.*/
       - create-build:
