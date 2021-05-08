@@ -1,15 +1,32 @@
-nav ul {
-    list-style: none;
-    width: 100%;
-    padding-left: 0;
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-nav ul li {
-    display: inline-block;
+
+.about-image {
+    height: auto;
+    width: 300px;
+    border: 5px solid whitesmoke;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
 }
 
-nav ul li:nth-of-type(2) {
-    width: calc(100% - 40px);
-    vertical-align: middle;
-    text-align: center;
+.about-information {
+    margin-left: 20px;
+    max-width: 400px;
+}
+
+.about-social {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 600px){
+    .about-container{
+        flex-direction: column;
+    }
 }
