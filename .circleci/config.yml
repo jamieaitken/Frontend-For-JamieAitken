@@ -52,10 +52,16 @@ jobs:
 workflows:
   build:
     jobs:
-      - install-dependencies
+      - install-dependencies:
+          filters:
+            tags:
+              only: /^v.*/
       - create-build:
           requires:
             - install-dependencies
+          filters:
+            tags:
+              only: /^v.*/
       - sync-to-s3:
           context: AWS
           requires:
