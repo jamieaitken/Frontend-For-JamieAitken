@@ -54,8 +54,8 @@ workflows:
     jobs:
       - install-dependencies:
           filters:
-            branches:
-              only: master
+            tags:
+              only: /^v.*/
       - create-build:
           requires:
             - install-dependencies
