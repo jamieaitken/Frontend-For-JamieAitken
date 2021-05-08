@@ -52,12 +52,7 @@ jobs:
 workflows:
   build:
     jobs:
-      - install-dependencies:
-          filters:
-            branches:
-              ignore: /.*/
-            tags:
-              only: /^v.*/
+      - install-dependencies
       - create-build:
           requires:
             - install-dependencies
@@ -65,7 +60,17 @@ workflows:
           context: AWS
           requires:
             - create-build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
       - create-cloudfront-invalidation:
           context: AWS
           requires:
             - sync-to-s3
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
