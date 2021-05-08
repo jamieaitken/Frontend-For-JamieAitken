@@ -59,11 +59,24 @@ workflows:
       - create-build:
           requires:
             - install-dependencies
+          filters:
+            tags:
+              only: /^v.*/
       - sync-to-s3:
           context: AWS
           requires:
             - create-build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
       - create-cloudfront-invalidation:
           context: AWS
           requires:
             - sync-to-s3
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
