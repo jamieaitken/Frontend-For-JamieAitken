@@ -1,0 +1,12 @@
+.social-link {
+    margin-right: 20px;
+}
+
+.social-link svg path {
+    fill: black !important;
+    transition: 0.4s;
+}
+
+.social-link svg path:hover {
+    fill: cornflowerblue !important;
+}

@@ -1,6 +1,4 @@
-@import '~antd/dist/antd.css';
-
-body 
+body
 {
     background-color: whitesmoke;
     color: black;
@@ -8,25 +6,5 @@ body
 }
 
 #root {
-    padding-top: 10px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-section.block {
-    display: inline-block;
-    width: 49%;
-}
-
-section.block:nth-of-type(1){
-    vertical-align: top;
-}
-
-@media (max-width: 750px)
-{
-    section.block {
-        display: block;
-        width: 100%;
-    }
+    margin-top: 100px;
 }

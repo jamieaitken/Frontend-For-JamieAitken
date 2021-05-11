@@ -1,10 +1,82 @@
-orbs:
-  react: "thefrontside/react@0.2.0"
 version: 2.1
+
+orbs:
+  aws-s3: circleci/aws-s3@2.0.0
+  aws-cli: circleci/aws-cli@2.0.0
+
+jobs:
+  install-dependencies:
+    docker:
+      - image: cimg/node:16.1.0
+    steps:
+      - checkout
+      - run:
+          name: yarn install
+          command: yarn install
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  create-build:
+    docker:
+      - image: cimg/node:16.1.0
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: yarn build
+          command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  sync-to-s3:
+    docker:
+      - image: cimg/node:16.1.0
+    steps:
+      - attach_workspace:
+          at: .
+      - aws-s3/sync:
+          from: ./build
+          to: 's3://$BUCKET_URI'
+  create-cloudfront-invalidation:
+    docker:
+      - image: cimg/node:16.1.0
+    steps:
+      - aws-cli/install
+      - run:
+          name: Invalidate Distribution
+          command: |
+            aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths "/*"
+
 workflows:
-  push:
+  build:
     jobs:
-      - react/install
-      - react/eslint:
+      - install-dependencies:
+          filters:
+            tags:
+              only: /^v.*/
+      - create-build:
           requires:
-            - react/install
+            - install-dependencies
+          filters:
+            tags:
+              only: /^v.*/
+      - sync-to-s3:
+          context: AWS
+          requires:
+            - create-build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
+      - create-cloudfront-invalidation:
+          context: AWS
+          requires:
+            - sync-to-s3
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
