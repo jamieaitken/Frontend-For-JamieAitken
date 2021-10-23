@@ -4,6 +4,7 @@ import './Header.css';
 import Image from 'react-bootstrap/Image'
 import moment from "moment";
 import SocialLinks from "../SocialLinks/SocialLinks";
+import Loader from "react-loader-spinner";
 
 
 export interface Props {
@@ -12,13 +13,15 @@ export interface Props {
 
 interface State {
     profileImage: string,
+    isLoading: boolean
 }
 
 export default class Header extends Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            profileImage: ''
+            profileImage: '',
+            isLoading: true
         }
     }
 
@@ -29,23 +32,34 @@ export default class Header extends Component<Props, State> {
     componentDidMount() {
         fetch(constants.basePath + '/integrations/twitter')
             .then(response => response.json())
-            .then(data => this.setState({profileImage: data.profileImageURLHTTPS}))
+            .then(data => this.setState({
+                profileImage: data.profileImageURLHTTPS,
+                isLoading: false,
+            }))
     }
 
     render() {
         return (
             <section className="about-container">
-                <Image src={this.state.profileImage} className="about-image" roundedCircle/>
-                <div className="about-information">
-                    <h1>
-                        <span role="img" aria-label="waving emoji">👋👋👋</span>
-                    </h1>
-                    <p>I&apos;m a Software Engineer with {this.calculateExperience()} and currently working at
-                        Zettle By PayPal in Edinburgh, Scotland.</p>
-                    <div className="about-social">
-                        <SocialLinks/>
+                {this.state.isLoading ?
+                    <Loader type="ThreeDots" color="black"/>
+                    :
+                    <>
+                    <Image src={this.state.profileImage} className="about-image" roundedCircle/>
+                    <div className="about-information">
+                        <h1>
+                            <span role="img" aria-label="waving emoji">👋👋👋</span>
+                        </h1>
+                        <p>I&apos;m a Software Engineer with {this.calculateExperience()} and currently working from
+                            Edinburgh, Scotland <span role="img" aria-label="scottish emoji">🏴󠁧󠁢󠁳󠁣󠁴󠁿󠁢󠁳󠁣</span></p>
+                        <div className="about-social">
+                            <SocialLinks/>
+                        </div>
                     </div>
-                </div>
+                </>
+                }
+
+
             </section>
         );
     }

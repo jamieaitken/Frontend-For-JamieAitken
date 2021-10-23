@@ -5,6 +5,8 @@ import Header from '../Header/Header';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 
 
 library.add(faLinkedin, faInstagram, faTwitter, faGithub, faChrome);
